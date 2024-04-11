@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AOSInit } from "@/lib/hooks/useAOS";
+import { ThemeProvider } from "@/components/theme-provider";
+import GridSmallBackground from "@/components/gridsmall-background";
+import { TracingBeam } from "@/components/tracing-beam";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={[inter.className, 'antialiased bg-gray-50 dark:bg-black min-h-screen'].join(' ')}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange >
+          <GridSmallBackground>
+            <TracingBeam>
+              {children}
+
+            </TracingBeam>
+
+          </GridSmallBackground>
+
+        </ThemeProvider>
+        <AOSInit />
+      </body>
     </html>
   );
 }
