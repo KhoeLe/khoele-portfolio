@@ -5,6 +5,7 @@ import { AOSInit } from "@/lib/hooks/useAOS";
 import { ThemeProvider } from "@/components/theme-provider";
 import GridSmallBackground from "@/components/gridsmall-background";
 import { TracingBeam } from "@/components/tracing-beam";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
 
         </ThemeProvider>
         <AOSInit />
+        <GoogleAnalytics trackPageViews />
       </body>
     </html>
   );
