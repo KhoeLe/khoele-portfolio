@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     },
     openGraph: {
       title: postData?.title,
-      url: "https://dailyblog-demo.vercel.app/blog" + slug,
+      url: "https://khoele-portfolio.vercel.app/articles/" + slug,
       siteName: "My Portfolio",
       images: postData?.contentHtml?.match(/!\[.*?\]\((.*?)\)/g)?.map((img) => img.match(/\((.*?)\)/)?.[1]) || [],
       type: "website",
