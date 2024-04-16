@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import GridSmallBackground from "@/components/gridsmall-background";
 import { TracingBeam } from "@/components/tracing-beam";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"], display: 'swap', });
 
@@ -58,6 +59,7 @@ export default function RootLayout({
         <AOSInit />
       </body>
       <GoogleAnalytics gaId="G-VK5QGET3FZ" />
+      <Analytics />
     </html>
   );
 }
