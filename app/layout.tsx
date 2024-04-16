@@ -7,7 +7,7 @@ import GridSmallBackground from "@/components/gridsmall-background";
 import { TracingBeam } from "@/components/tracing-beam";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: 'swap', });
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://khoele-portfolio.vercel.app/"),
